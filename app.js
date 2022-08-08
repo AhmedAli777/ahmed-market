@@ -14,11 +14,12 @@ const cors = require('cors');
 
 const AppError = require(`${__dirname}/utils/appError`);
 const globalErrorHandler = require(`${__dirname}/controllers/errorController`);
-const tourRouter = require(`${__dirname}/routes/tourRoutes`);
+const productRouter = require(`${__dirname}/routes/productRoutes`);
 const userRouter = require(`${__dirname}/routes/userRoutes`);
 const reviewRouter = require(`${__dirname}/routes/reviewRoutes`);
 const bookingRouter = require(`${__dirname}/routes/bookingRoutes`);
 const bookingController = require('./controllers/bookingController');
+
 const viewRouter = require(`${__dirname}/routes/viewRoutes`);
 
 const app = express();
@@ -31,9 +32,9 @@ app.set('views', path.join(__dirname, 'views'));
 // Implement CORS
 app.use(cors());
 // Access-Control-Allow-Origin *
-// api.natours.com, front-end natours.com
+// api.naproducts.com, front-end naproducts.com
 // app.use(cors({
-//   origin: 'https://www.natours.com'
+//   origin: 'https://www.naproducts.com'
 // }))
 
 app.options('*', cors());
@@ -98,13 +99,13 @@ app.use(compression());
 // });
 
 // app.use((req, res, next) => {
-//   req.requestTime = new Date().toISOString();
+//   req.requestTime = new Date().toISOStrinproductRouterg();
 //   next();
 // });
 
 // 3) ROUTES
 app.use('/', viewRouter);
-app.use('/api/v1/tours', tourRouter);
+app.use('/api/v1/products', productRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
 app.use('/api/v1/bookings', bookingRouter);

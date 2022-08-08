@@ -5,9 +5,9 @@ const APIFeatures = require(`${__dirname}/../utils/apiFeatures`);
 
 exports.getAll = (Model) =>
   catchAsync(async (req, res, next) => {
-    //allow nested Get reviews on tour "hack"
+    //allow nested Get reviews on product "hack"
     let filter = {};
-    if (req.params.tourId) filter = { tour: req.params.tourId };
+    if (req.params.productId) filter = { product: req.params.productId };
     //EXECUTE QUERY
     const features = new APIFeatures(Model.find(filter), req.query)
       .filter()

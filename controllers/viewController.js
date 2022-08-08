@@ -1,6 +1,6 @@
 /* eslint-disable import/no-dynamic-require */
 /* eslint-disable no-unused-vars */
-const Tour = require(`${__dirname}/../models/tourModel`);
+const Product = require(`${__dirname}/../models/productModel`);
 const User = require(`${__dirname}/../models/userModel`);
 const Booking = require(`${__dirname}/../models/bookingModel`);
 
@@ -18,11 +18,11 @@ exports.alerts = (req, res, next) => {
 
 exports.getOverview = catchAsync(async (req, res, next) => {
   //1)Get data from collection
-  const tours = await Tour.find();
+  const products = await Product.find();
   //2) render
   res.status(200).render('overview', {
-    title: 'Exciting tours for adventurous people',
-    tours,
+    title: 'Exciting products for adventurous people',
+    products,
   });
 });
 
@@ -32,32 +32,32 @@ exports.getAccount = (req, res) => {
   });
 };
 
-exports.getTour = catchAsync(async (req, res, next) => {
-  const tour = await Tour.findOne({ slug: req.params.slug }).populate({
+exports.getProduct = catchAsync(async (req, res, next) => {
+  const product = await Product.findOne({ slug: req.params.slug }).populate({
     path: 'reviews',
     fields: 'review rating user',
   });
-  // console.log(tour.images);
-  if (!tour) {
-    return next(new AppError('There is no tour with that name.', 404));
+  // console.log(product.images);
+  if (!product) {
+    return next(new AppError('There is no product with that name.', 404));
   }
-  res.status(200).render('tour', {
-    title: `${tour.name} Tour`,
-    tour,
+  res.status(200).render('product', {
+    title: `${product.name} Product`,
+    product,
   });
 });
 
-exports.getMyTours = catchAsync(async (req, res, next) => {
+exports.getMyProducts = catchAsync(async (req, res, next) => {
   // 1) Find all bookings
   const bookings = await Booking.find({ user: req.user.id });
 
-  // 2) Find tours with the returned IDs
-  const tourIDs = bookings.map((el) => el.tour);
-  const tours = await Tour.find({ _id: { $in: tourIDs } });
+  // 2) Find products with the returned IDs
+  const productIDs = bookings.map((el) => el.product);
+  const products = await Product.find({ _id: { $in: productIDs } });
 
   res.status(200).render('overview', {
-    title: 'My Tours',
-    tours,
+    title: 'My Products',
+    products,
   });
 });
 

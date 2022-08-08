@@ -5,12 +5,12 @@ const router = express.Router();
 
 const {
   getOverview,
-  getTour,
+  getProduct,
   getLoginForm,
   getAccount,
   updateUserData,
   getSignupForm,
-  getMyTours,
+  getMyProducts,
   alerts,
 } = require(`${__dirname}/../controllers/viewController`);
 const {
@@ -23,8 +23,8 @@ router.use(alerts);
 router.get('/signup', getSignupForm);
 router.get('/me', protect, getAccount);
 router.get('/', isLoggedIn, getOverview);
-router.get('/my-tours', protect, getMyTours);
-router.get('/tour/:slug', isLoggedIn, getTour);
+router.get('/my-products', protect, getMyProducts);
+router.get('/product/:slug', isLoggedIn, getProduct);
 router.get('/login', isLoggedIn, getLoginForm);
 router.post('/submit-user-data', protect, updateUserData);
 module.exports = router;
