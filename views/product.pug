@@ -23,7 +23,7 @@ block content
 
         .heading-box
             h1.heading-primary
-                span= `${product.name} tour`
+                span= `${product.name} `
             .heading-box__group
                 .heading-box__detail
                     svg.heading-box__icon
@@ -43,7 +43,7 @@ block content
                     //- +overviewBox('Next date', date, 'calendar')
                     //- +overviewBox('Difficulty', tour.difficulty, 'trending-up')
                     //- +overviewBox('Participants', `${tour.maxGroupSize} people`, 'user')
-                    +overviewBox('Rating', `${tour.ratingAverage} / 5`, 'star')
+                    +overviewBox('Rating', `${product.ratingAverage} / 5`, 'star')
 
 
                 .overview-box__group
