@@ -21,7 +21,7 @@ exports.getOverview = catchAsync(async (req, res, next) => {
   const products = await Product.find();
   //2) render
   res.status(200).render('overview', {
-    title: 'Exciting products for adventurous people',
+    title: 'Ahmed Market',
     products,
   });
 });

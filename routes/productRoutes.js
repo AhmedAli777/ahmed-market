@@ -36,15 +36,6 @@ const router = express.Router();
 router.use('/:productId/reviews', reviewRouter);
 router.route('/top-5-products').get(alisTopFive, getAllProducts);
 router.route('/products-stats').get(getProductsStats);
-router
-  .route('/monthly-plan/:year')
-  .get(restrictTo('admin', 'guid', 'lead-guid'), getMonthlyPlan);
-
-router
-  .route('/products-within/:distance/center/:latlng/unit/:unit')
-  .get(getProductWithin);
-
-router.route('/distances/:latlng/unit/:unit').get(getDistances);
 
 router
   .route('/')
