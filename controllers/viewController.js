@@ -21,7 +21,7 @@ exports.getOverview = catchAsync(async (req, res, next) => {
   const products = await Product.find({ approved: { $eq: true } });
   //2) render
   res.status(200).render('overview', {
-    title: 'Ahmed Market',
+    title: 'All Products',
     products,
   });
 });
