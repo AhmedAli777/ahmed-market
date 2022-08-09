@@ -24,6 +24,7 @@ exports.getOverview = catchAsync(async (req, res, next) => {
     title: 'All Products',
     products,
   });
+  next();
 });
 
 exports.getAccount = (req, res) => {
