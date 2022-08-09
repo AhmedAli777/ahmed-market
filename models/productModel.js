@@ -110,10 +110,10 @@ productSchema.pre(/^find/, function (next) {
   next();
 });
 
-productSchema.pre(/^find/, function (next) {
-  this.find({ approved: { $ne: true } });
-  next();
-});
+// productSchema.pre(/^find/, function (next) {
+//   this.find({ approved: { $ne: true } });
+//   next();
+// });
 
 const Product = mongoose.model('Product', productSchema);
 module.exports = Product;
