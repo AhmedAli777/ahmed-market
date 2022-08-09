@@ -18,7 +18,7 @@ exports.alerts = (req, res, next) => {
 
 exports.getOverview = catchAsync(async (req, res, next) => {
   //1)Get data from collection
-  const products = await Product.find();
+  const products = await Product.find({ approved: 'ture' });
   //2) render
   res.status(200).render('overview', {
     title: 'Ahmed Market',
