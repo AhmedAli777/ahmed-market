@@ -18,13 +18,12 @@ exports.alerts = (req, res, next) => {
 
 exports.getOverview = catchAsync(async (req, res, next) => {
   //1)Get data from collection
-  const products = await Product.find({ approved: { $eq: true } });
+  const products = await Product.find({ approved: { $ne: true } });
   //2) render
   res.status(200).render('overview', {
     title: 'Ahmed Market',
     products,
   });
-  next();
 });
 
 exports.getAccount = (req, res) => {
