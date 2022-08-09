@@ -12,11 +12,11 @@ const productSchema = new mongoose.Schema(
       //unique: [true, 'A product must have a unique name'],
       trim: true,
       maxlength: [
-        40,
+        20,
         ' A product name must have less  than or equal 40 characters ',
       ],
       minlength: [
-        10,
+        5,
         ' A product name must have more  than or equal 40 characters ',
       ],
     },
@@ -63,7 +63,18 @@ const productSchema = new mongoose.Schema(
       type: Date,
       default: Date.now(),
     },
-
+    category: {
+      type: String,
+      enum: ['food', 'drink', 'general'],
+      default: 'general',
+      required: true,
+    },
+    subCategory: {
+      type: String,
+      enum: ['small', 'medium', 'large'],
+      default: 'none',
+      required: true,
+    },
     approved: {
       type: Boolean,
       default: false,
