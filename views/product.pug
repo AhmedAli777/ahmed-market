@@ -39,11 +39,11 @@ block content
             div
                 .overview-box__group
                     h2.heading-secondary.ma-bt-lg Quick facts
-                    //- - const date = tour.startDates[0].toLocaleString('en-us', {month: 'long', year: 'numeric'})
-                    //- +overviewBox('Next date', date, 'calendar')
-                    //- +overviewBox('Difficulty', tour.difficulty, 'trending-up')
-                    //- +overviewBox('Participants', `${tour.maxGroupSize} people`, 'user')
-                    +overviewBox('Rating', `${product.ratingAverage} / 5`, 'star')
+                        //- - const date = tour.startDates[0].toLocaleString('en-us', {month: 'long', year: 'numeric'})
+                        //- +overviewBox('Next date', date, 'calendar')
+                        //- +overviewBox('Difficulty', tour.difficulty, 'trending-up')
+                        //- +overviewBox('Participants', `${tour.maxGroupSize} people`, 'user')
+                        +overviewBox('Rating', `${product.ratingAverage} / 5`, 'star')
 
 
                 .overview-box__group
@@ -55,7 +55,7 @@ block content
                         //-     span.overview-box__label Lead guide
                         //- - if (guide.role === 'guide')
                         //-     span.overview-box__label Tour guide
-                        span.overview-box__text= guide.name
+                        span.overview-box__text= vendor.name
 
         .description-box
             h2.heading-secondary.ma-bt-lg= `About ${product.name}`
