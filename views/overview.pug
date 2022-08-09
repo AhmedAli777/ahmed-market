@@ -13,24 +13,24 @@ block content
                             span= product.name
 
                     .card__details
-                        h4.card__sub-heading #{product.difficulty} #{product.duration}-day product
+                        h4.card__sub-heading product.difficulty product.duration-day product
                         p.card__text #{product.summary}
                         .card__data
                             svg.card__icon
                                 use(xlink:href='img/icons.svg#icon-map-pin')
-                            span #{product.startLocation.description}
+                            span product.startLocation.description
                         .card__data
                             svg.card__icon
                                 use(xlink:href='img/icons.svg#icon-calendar')
-                            span #{product.startDates[0].toLocaleString('en-us' ,{month:'long', year:'numeric'})}
+                            span datee
                         .card__data
                             svg.card__icon
                                 use(xlink:href='img/icons.svg#icon-flag')
-                            span #{product.locations.length} stops
+                            span 89 stops
                         .card__data
                             svg.card__icon
                                 use(xlink:href='img/icons.svg#icon-user')
-                            span #{product.maxGroupSize} people
+                            span 10 people
 
                     .card__footer
                         p
