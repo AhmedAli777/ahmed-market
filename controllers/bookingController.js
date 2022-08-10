@@ -21,7 +21,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     success_url: `${req.protocol}://${req.get(
       'host'
     )}/my-products?alert=booking`,
-    cancel_url: `${req.protocol}://${req.get('host')}/product/${product.slug}`,
+    cancel_url: `${req.protocol}://${req.get('host')}/product/${product.id}`,
     customer_email: req.user.email,
     client_reference_id: req.params.productId,
     line_items: [
@@ -50,7 +50,7 @@ const createBookingCheckout = async (session) => {
   const product = session.client_reference_id;
   const user = (await User.findOne({ email: session.customer_email })).id;
   const price = session.amount_total / 100;
-  await Booking.create({ product, user, price });
+  await Booking.create({ product, seller: user, price });
 };
 
 exports.webhookCheckout = (req, res, next) => {
