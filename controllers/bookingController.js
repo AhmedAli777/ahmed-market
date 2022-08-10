@@ -35,7 +35,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
             product.imageCover
           }`,
         ],
-        amount: product.price * 100,
+        price: product.price * 1,
         currency: 'usd',
         quantity: 1,
       },
