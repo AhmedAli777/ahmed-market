@@ -28,20 +28,20 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     client_reference_id: req.params.productId,
     line_items: [
       {
-        name: `${product.name} product`,
-        description: product.summary,
-        images: [
-          `${req.protocol}://${req.get('host')}/img/products/${
-            product.imageCover
-          }`,
-        ],
-        amount: product.price * 100,
-        currency: 'usd',
+        //name: `${product.name} product`,
+        // description: product.summary,
+        //images: [
+        // `${req.protocol}://${req.get('host')}/img/products/${
+        //   product.imageCover
+        // }`,
+        // ],
+        // amount: product.price * 100,
+        //currency: 'usd',
         quantity: 1,
+        price: product.price,
       },
     ],
   });
-
   // 3) Create session as response
   res.status(200).json({
     status: 'success',
