@@ -1,7 +1,7 @@
 /* eslint-disable  */
 
 const stripe = require('stripe')(
-  'sk_test_51LAA6TEw66hBUYBSAdjXao8V74oLtGklWnXhIjvhXgkD3IVkHET2AkccvcVqhCWHX7vnj6Ek2lrKpNMZNzduVeAA00qtKXxzPB'
+  'sk_test_51LVIqUK10dA9VsHTlrKPC7EcI5Mjd1Q7Sgwx5ooyAe4bpFjr9l0QLcMUQ7EtPlnQq8gHm08WJVhjyVUsFFQtCF5C00diLUCOBN'
 );
 const Product = require('../models/productModel');
 const User = require('../models/userModel');
