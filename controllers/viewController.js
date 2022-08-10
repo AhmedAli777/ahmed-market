@@ -33,7 +33,7 @@ exports.getAccount = (req, res) => {
 };
 
 exports.getProduct = catchAsync(async (req, res, next) => {
-  const product = await Product.findById(req.params.id).populate({
+  const product = await Product.findOne({ id: req.params.id }).populate({
     path: 'reviews',
     fields: 'review rating user',
   });
