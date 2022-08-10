@@ -2,13 +2,15 @@
 import axios from 'axios';
 import { showAlert } from './alerts';
 const stripe = Stripe(
-  'pk_test_51LAA6TEw66hBUYBSDg2C4OoaMU8wjinua8aky3RE64rpMRYU3aSaK2qRcRPa0rGoKuA3XdspfS8cEznJLu5j97Ue00QNpyfxJw'
+  'pk_test_51LVIqUK10dA9VsHTisNiWI0lHnR5AKLwZHTiR1D7A16gT8gQLA5UaCJtVrYdAJlINU0MZptyNx2YPdJ5tLFfJIYG00ocnaBhXA'
 );
 
-export const bookTour = async (tourId) => {
+export const bookTour = async (productId) => {
   try {
     // 1) Get checkout session from API
-    const session = await axios(`/api/v1/bookings/checkout-session/${tourId}`);
+    const session = await axios(
+      `/api/v1/bookings/checkout-session/${productId}`
+    );
     // console.log(session);
 
     // 2) Create checkout form + chanre credit card

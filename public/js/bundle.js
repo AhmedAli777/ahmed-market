@@ -64367,10 +64367,10 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-var stripe = Stripe('pk_test_51LAA6TEw66hBUYBSDg2C4OoaMU8wjinua8aky3RE64rpMRYU3aSaK2qRcRPa0rGoKuA3XdspfS8cEznJLu5j97Ue00QNpyfxJw');
+var stripe = Stripe('pk_test_51LVIqUK10dA9VsHTisNiWI0lHnR5AKLwZHTiR1D7A16gT8gQLA5UaCJtVrYdAJlINU0MZptyNx2YPdJ5tLFfJIYG00ocnaBhXA');
 
 var bookTour = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(tourId) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(productId) {
     var session;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
@@ -64378,7 +64378,7 @@ var bookTour = /*#__PURE__*/function () {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return (0, _axios.default)("/api/v1/bookings/checkout-session/".concat(tourId));
+            return (0, _axios.default)("/api/v1/bookings/checkout-session/".concat(productId));
 
           case 3:
             session = _context.sent;
@@ -64705,7 +64705,7 @@ var signupForm = document.querySelector('.form--signup');
 var logOutBtn = document.querySelector('.nav__el--logout');
 var userDataForm = document.querySelector('.form-user-data');
 var userPasswordForm = document.querySelector('.form-user-password');
-var bookBtn = document.getElementById('book-tour'); // DELEGATION
+var bookBtn = document.getElementById('book-product'); // DELEGATION
 
 if (leaflet) {
   // const locations = JSON.parse(mapBox.dataset.locations);
@@ -64776,8 +64776,8 @@ if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/f
 }());
 if (bookBtn) bookBtn.addEventListener('click', function (e) {
   e.target.textContent = 'Processing...';
-  var tourId = e.target.dataset.tourId;
-  (0, _stripe.bookTour)(tourId);
+  var productId = e.target.dataset.productId;
+  (0, _stripe.bookTour)(productId);
 });
 var alertMessage = document.querySelector('body').dataset.alert;
 if (alertMessage) (0, _alerts.showAlert)('success', alertMessage, 20);
@@ -64809,7 +64809,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54365" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61195" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

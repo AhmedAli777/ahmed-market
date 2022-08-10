@@ -14,7 +14,7 @@ const signupForm = document.querySelector('.form--signup');
 const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
-const bookBtn = document.getElementById('book-tour');
+const bookBtn = document.getElementById('book-product');
 
 // DELEGATION
 if (leaflet) {
@@ -79,8 +79,8 @@ if (userPasswordForm)
 if (bookBtn)
   bookBtn.addEventListener('click', (e) => {
     e.target.textContent = 'Processing...';
-    const { tourId } = e.target.dataset;
-    bookTour(tourId);
+    const { productId } = e.target.dataset;
+    bookTour(productId);
   });
 
 const alertMessage = document.querySelector('body').dataset.alert;
