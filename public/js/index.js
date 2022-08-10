@@ -4,7 +4,7 @@ import { sign } from 'jsonwebtoken';
 import { displayMap } from './leaflet';
 import { login, logout, signup } from './login';
 import { updateSettings } from './updateSettings';
-import { bookTour } from './stripe';
+import { bookProduct } from './stripe';
 import { showAlert } from './alerts';
 
 // DOM ELEMENTS
@@ -80,7 +80,7 @@ if (bookBtn)
   bookBtn.addEventListener('click', (e) => {
     e.target.textContent = 'Processing...';
     const { productId } = e.target.dataset;
-    bookTour(productId);
+    bookProduct(productId);
   });
 
 const alertMessage = document.querySelector('body').dataset.alert;

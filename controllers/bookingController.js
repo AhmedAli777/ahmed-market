@@ -52,10 +52,7 @@ const createBookingCheckout = async (session) => {
   const product = session.client_reference_id;
   const user = (await User.findOne({ email: session.customer_email })).id;
   const price = session.amount_total / 100;
-  await Booking.create(
-    { product: 'test', user: 'test', price: 'test' },
-    { validateBeforeSave: false }
-  );
+  await Booking.create({ product, user, price });
 };
 
 exports.webhookCheckout = (req, res, next) => {

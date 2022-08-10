@@ -64351,7 +64351,7 @@ exports.updateSettings = updateSettings;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.bookTour = void 0;
+exports.bookProduct = void 0;
 
 var _axios = _interopRequireDefault(require("axios"));
 
@@ -64369,7 +64369,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 var stripe = Stripe('pk_test_51LVIqUK10dA9VsHTisNiWI0lHnR5AKLwZHTiR1D7A16gT8gQLA5UaCJtVrYdAJlINU0MZptyNx2YPdJ5tLFfJIYG00ocnaBhXA');
 
-var bookTour = /*#__PURE__*/function () {
+var bookProduct = /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(productId) {
     var session;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
@@ -64405,12 +64405,12 @@ var bookTour = /*#__PURE__*/function () {
     }, _callee, null, [[0, 8]]);
   }));
 
-  return function bookTour(_x) {
+  return function bookProduct(_x) {
     return _ref.apply(this, arguments);
   };
 }();
 
-exports.bookTour = bookTour;
+exports.bookProduct = bookProduct;
 },{"axios":"../../node_modules/axios/index.js","./alerts":"alerts.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
@@ -64777,7 +64777,7 @@ if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/f
 if (bookBtn) bookBtn.addEventListener('click', function (e) {
   e.target.textContent = 'Processing...';
   var productId = e.target.dataset.productId;
-  (0, _stripe.bookTour)(productId);
+  (0, _stripe.bookProduct)(productId);
 });
 var alertMessage = document.querySelector('body').dataset.alert;
 if (alertMessage) (0, _alerts.showAlert)('success', alertMessage, 20);
@@ -64809,7 +64809,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61195" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57626" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
