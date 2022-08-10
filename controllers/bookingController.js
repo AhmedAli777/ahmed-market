@@ -28,7 +28,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
     client_reference_id: req.params.productId,
     line_items: [
       {
-        name: `${product.name} Product`,
+        //name: `${product.name} Product`,
         description: product.summary,
         images: [
           `${req.protocol}://${req.get('host')}/img/products/${
