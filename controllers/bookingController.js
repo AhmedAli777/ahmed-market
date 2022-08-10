@@ -1,3 +1,5 @@
+/* eslint-disable  */
+
 const stripe = require('stripe')(
   'sk_test_51LAA6TEw66hBUYBSAdjXao8V74oLtGklWnXhIjvhXgkD3IVkHET2AkccvcVqhCWHX7vnj6Ek2lrKpNMZNzduVeAA00qtKXxzPB'
 );
@@ -50,7 +52,10 @@ const createBookingCheckout = async (session) => {
   const product = session.client_reference_id;
   const user = (await User.findOne({ email: session.customer_email })).id;
   const price = session.amount_total / 100;
-  await Booking.create({ product, user, price }, { validateBeforeSave: false });
+  await Booking.create(
+    { product: 'test', user: 'test', price: 'test' },
+    { validateBeforeSave: false }
+  );
 };
 
 exports.webhookCheckout = (req, res, next) => {
