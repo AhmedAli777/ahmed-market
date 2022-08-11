@@ -75,9 +75,10 @@ const productSchema = new mongoose.Schema(
       default: 'none',
       required: true,
     },
-    approved: {
-      type: Boolean,
-      default: false,
+    status: {
+      type: String,
+      denum: ['waiting', 'approved', 'rejected'],
+      default: 'waiting',
     },
 
     vendor: {
