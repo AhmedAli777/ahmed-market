@@ -81,10 +81,10 @@ exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
 exports.getMyApprovedProducts = catchAsync(async (req, res, next) => {
   // 1) Find all bookings
 
-  const products = await Product.find(
-    { vendor: req.user.id },
-    { status: 'approved' }
-  );
+  const products = await Product.find({
+    vendor: req.user.id,
+    status: 'approved',
+  });
 
   res.status(200).render('overview', {
     title: 'My Products',
@@ -95,10 +95,10 @@ exports.getMyApprovedProducts = catchAsync(async (req, res, next) => {
 exports.getMyRejectedProducts = catchAsync(async (req, res, next) => {
   // 1) Find all bookings
 
-  const products = await Product.find(
-    { vendor: req.user.id },
-    { status: 'rejected' }
-  );
+  const products = await Product.find({
+    vendor: req.user.id,
+    status: 'rejected',
+  });
 
   res.status(200).render('overview', {
     title: 'My Products',
