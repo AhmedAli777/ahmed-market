@@ -77,6 +77,9 @@ block content
             .cta__content
                 h2.heading-secondary What are you waiting for?
                 p.cta__text= `${product.summary}. Make it yours today!`
+                
+                if (user.role === 'admin' && product.status==='waiting')
+                    button.btn.btn--green.span-all-rows#approve-product(data-product-id=`${product.id}`) approve !
                 if user
                     button.btn.btn--green.span-all-rows#buy-product(data-product-id=`${product.id}`) Buy now !
                 else
