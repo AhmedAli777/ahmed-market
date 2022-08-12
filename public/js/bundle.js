@@ -64447,14 +64447,12 @@ var addNewProduct = /*#__PURE__*/function () {
             return (0, _axios.default)({
               method: 'POST',
               url: url,
-              data: {
-                name: name,
-                price: price,
-                category: category,
-                subCategory: subCategory,
-                summary: summary,
-                description: description
-              }
+              name: name,
+              price: price,
+              category: category,
+              subCategory: subCategory,
+              summary: summary,
+              description: description
             });
 
           case 4:
