@@ -45,8 +45,8 @@ router
   .route('/:id')
   .get(getProduct)
   .patch(
-    protect,
-    restrictTo('admin'),
+    // protect,
+    // restrictTo('admin'),
     uploadProductImages,
     resizeProductImages,
     updateProduct
