@@ -52,7 +52,6 @@ exports.getProduct = catchAsync(async (req, res, next) => {
 exports.getMyProducts = catchAsync(async (req, res, next) => {
   // 1) Find all bookings
   const bookings = await Booking.find({ user: req.user.id });
-
   // 2) Find products with the returned IDs
   const productIDs = bookings.map((el) => el.product);
   const products = await Product.find({ _id: { $in: productIDs } });
@@ -65,11 +64,10 @@ exports.getMyProducts = catchAsync(async (req, res, next) => {
 
 exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
   // 1) Find all bookings
-  const bookings = await Booking.find({ vendor: req.user.id });
-
+  const products = await Booking.find({ vendor: req.user.id });
   // 2) Find products with the returned IDs
-  const productIDs = bookings.map((el) => el.product);
-  const products = await Product.find({ _id: { $in: productIDs } });
+  // const productIDs = bookings.map((el) => el.product);
+  // const products = await Product.find({ _id: { $in: productIDs } });
 
   res.status(200).render('overview', {
     title: 'My Products',
