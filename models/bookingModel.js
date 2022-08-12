@@ -11,6 +11,11 @@ const bookingSchema = new mongoose.Schema({
     ref: 'User',
     required: [true, 'Booking must belong to a User!'],
   },
+  vendor: {
+    type: mongoose.Schema.ObjectId,
+    ref: 'User',
+    required: [true, 'Booking must belong to a Vendor!'],
+  },
 
   price: {
     type: Number,

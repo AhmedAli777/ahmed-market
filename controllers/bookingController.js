@@ -28,7 +28,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
       {
         price_data: {
           product_data: {
-            name: `${product.name} Product`,
+            name: `${product.name}`,
             description: product.summary,
             images: [
               `${req.protocol}://${req.get('host')}/img/products/${
@@ -54,9 +54,10 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
 
 const createBookingCheckout = async (session) => {
   const product = session.client_reference_id;
+  const vendor = (await Product.findById(session.client_reference_id)).vendor;
   const user = (await User.findOne({ email: session.customer_email })).id;
   const price = session.amount_total / 100;
-  await Booking.create({ product, user, price });
+  await Booking.create({ product, vendor, user, price });
 };
 
 exports.webhookCheckout = (req, res, next) => {
