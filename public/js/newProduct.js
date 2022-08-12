@@ -28,7 +28,7 @@ export const addNewProduct = async (
     });
 
     if (res.data.status === 'success') {
-      showAlert('success', `${type.toUpperCase()} Added successfully!`);
+      showAlert('success', `${name.toUpperCase()} Added successfully!`);
     }
   } catch (err) {
     showAlert('error', err);

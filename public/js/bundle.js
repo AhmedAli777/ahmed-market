@@ -64461,7 +64461,7 @@ var addNewProduct = /*#__PURE__*/function () {
             res = _context.sent;
 
             if (res.data.status === 'success') {
-              (0, _alerts.showAlert)('success', "".concat(type.toUpperCase(), " Added successfully!"));
+              (0, _alerts.showAlert)('success', "".concat(name.toUpperCase(), " Added successfully!"));
             }
 
             _context.next = 11;
