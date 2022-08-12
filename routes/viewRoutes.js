@@ -29,6 +29,6 @@ router.get('/product/:id', isLoggedIn, getProduct);
 router.get('/login', isLoggedIn, getLoginForm);
 router.post('/submit-user-data', protect, updateUserData);
 
-router.get('/addproduct', getnewproductForm);
+router.get('/addproduct', protect, getnewproductForm);
 
 module.exports = router;
