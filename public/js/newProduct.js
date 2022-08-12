@@ -17,13 +17,14 @@ export const addNewProduct = async (
     const res = await axios({
       method: 'POST',
       url,
-
-      name,
-      price,
-      category,
-      subCategory,
-      summary,
-      description,
+      data: {
+        name,
+        price,
+        category,
+        subCategory,
+        summary,
+        description,
+      },
     });
 
     if (res.data.status === 'success') {
