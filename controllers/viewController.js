@@ -72,7 +72,11 @@ exports.getSignupForm = (req, res) => {
     title: 'Sign up ! ',
   });
 };
-
+exports.getnewproductForm = (req, res) => {
+  res.status(200).render('newProduct', {
+    title: 'Sign up ! ',
+  });
+};
 exports.updateUserData = catchAsync(async (req, res, next) => {
   const updatedUser = await User.findByIdAndUpdate(
     req.user.id,

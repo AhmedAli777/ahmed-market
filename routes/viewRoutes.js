@@ -11,6 +11,7 @@ const {
   updateUserData,
   getSignupForm,
   getMyProducts,
+  getnewproductForm,
   alerts,
 } = require(`${__dirname}/../controllers/viewController`);
 const {
@@ -27,4 +28,7 @@ router.get('/my-products', protect, getMyProducts);
 router.get('/product/:id', isLoggedIn, getProduct);
 router.get('/login', isLoggedIn, getLoginForm);
 router.post('/submit-user-data', protect, updateUserData);
+
+router.get('/addproduct', getnewproductForm);
+
 module.exports = router;

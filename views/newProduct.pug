@@ -1,0 +1,38 @@
+extends base
+
+block content
+    main.main
+      .login-form
+        h2.heading-secondary.ma-bt-lg Add New Product
+        form.form.form--newProduct
+          .form__group
+            label.form__label Name
+            input#name.form__input( required)
+          .form__group
+            label.form__label Price
+            input#price.form__input( required)
+          .form__group
+            label.form__label Category
+            input#category.form__input( required)
+          .form__group
+            label.form__label Sub Category
+            input#subCategory.form__input( required)
+          .form__group
+            label.form__label Summery
+            input#summery.form__input( required)
+          .form__group
+            label.form__label Description
+            input#description.form__input( required)
+          .form__group.form__photo-upload
+            label.form__label cover image
+            input.form__upload(type='file', accept='image/*', id='coverImage', name='coverImage')
+          .form__group.form__photo-upload
+            label.form__label first image
+            input.form__upload(type='file', accept='image/*', id='image1', name='Image1')
+          .form__group.form__photo-upload
+            label.form__label second image
+            input.form__upload(type='file', accept='image/*', id='image2', name='Image2')        .form__group.form__photo-upload
+            label.form__label third image
+            input.form__upload(type='file', accept='image/*', id='image3', name='Image3')        
+          .form__group
+            button.btn.btn--green Add Product
