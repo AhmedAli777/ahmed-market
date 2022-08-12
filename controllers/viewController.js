@@ -73,7 +73,7 @@ exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
 
   res.status(200).render('overview', {
     title: 'My Paid Products',
-    products,
+    myProducts,
   });
 });
 
