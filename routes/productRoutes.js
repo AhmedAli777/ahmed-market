@@ -40,8 +40,7 @@ router.route('/products-stats').get(getProductsStats);
 router
   .route('/')
   .get(getAllProducts)
-  // .post(protect, restrictTo('admin'), createProduct);
-  .post(createProduct);
+  .post(protect, restrictTo('admin', 'vendor'), createProduct);
 
 router
   .route('/:id')
