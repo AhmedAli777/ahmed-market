@@ -64784,7 +64784,7 @@ var newProduct = document.querySelector('.form--newProduct');
 var logOutBtn = document.querySelector('.nav__el--logout');
 var userDataForm = document.querySelector('.form-user-data');
 var userPasswordForm = document.querySelector('.form-user-password');
-var bookBtn = document.getElementById('book-product'); // DELEGATION
+var buyBtn = document.getElementById('buy-product'); // DELEGATION
 
 if (leaflet) {
   // const locations = JSON.parse(mapBox.dataset.locations);
@@ -64864,7 +64864,7 @@ if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/f
     return _ref.apply(this, arguments);
   };
 }());
-if (bookBtn) bookBtn.addEventListener('click', function (e) {
+if (buyBtn) bookBtn.addEventListener('click', function (e) {
   e.target.textContent = 'Processing...';
   var productId = e.target.dataset.productId;
   (0, _stripe.bookProduct)(productId);
@@ -64899,7 +64899,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54805" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62889" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

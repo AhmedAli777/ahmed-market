@@ -16,7 +16,7 @@ const newProduct = document.querySelector('.form--newProduct');
 const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
-const bookBtn = document.getElementById('book-product');
+const buyBtn = document.getElementById('buy-product');
 
 // DELEGATION
 if (leaflet) {
@@ -100,7 +100,7 @@ if (userPasswordForm)
     document.getElementById('password-confirm').value = '';
   });
 
-if (bookBtn)
+if (buyBtn)
   bookBtn.addEventListener('click', (e) => {
     e.target.textContent = 'Processing...';
     const { productId } = e.target.dataset;
