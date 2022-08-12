@@ -74,7 +74,7 @@ const productSchema = new mongoose.Schema(
     subCategory: {
       type: String,
       enum: ['small', 'medium', 'large'],
-      default: 'none',
+      default: 'small',
       required: true,
     },
     status: {
