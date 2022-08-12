@@ -74,7 +74,7 @@ exports.getSignupForm = (req, res) => {
 };
 exports.getnewproductForm = (req, res) => {
   res.status(200).render('newProduct', {
-    title: 'Sign up ! ',
+    title: 'Add new product ',
   });
 };
 exports.updateUserData = catchAsync(async (req, res, next) => {
