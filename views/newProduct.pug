@@ -4,7 +4,7 @@ block content
     main.main
       .login-form
         h2.heading-secondary.ma-bt-lg Add New Product
-        form.form.form--newProduct
+        form.form.form--newProduct(data-vendor-id=`${user.id}`)
           .form__group
             label.form__label Name
             input#name.form__input(required)
@@ -25,4 +25,4 @@ block content
             input#description.form__input(required)
 
           .form__group
-            button.btn.btn--green(data-vendor-id=`${user.id}`) Add Product
+            button.btn.btn--green Add Product
