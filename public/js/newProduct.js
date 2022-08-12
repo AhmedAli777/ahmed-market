@@ -31,6 +31,6 @@ export const addNewProduct = async (
       showAlert('success', `${type.toUpperCase()} Added successfully!`);
     }
   } catch (err) {
-    showAlert('error', err.response.data.message);
+    showAlert('error', err);
   }
 };
