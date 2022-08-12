@@ -33,10 +33,12 @@ exports.getAccount = (req, res) => {
 };
 
 exports.getProduct = catchAsync(async (req, res, next) => {
-  const product = await Product.findById(req.params.id).populate({
-    path: 'reviews',
-    fields: 'review rating user',
-  });
+  const product = await Product.findById(req.params.id)
+    .populate({
+      path: 'reviews',
+      fields: 'review rating user',
+    })
+    .populate('vendor');
   // console.log(product.images);
   if (!product) {
     return next(new AppError('There is no product with that name.', 404));
