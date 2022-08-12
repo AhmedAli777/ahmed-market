@@ -55,10 +55,10 @@ block content
                         //-     span.overview-box__label Lead guide
                         //- - if (guide.role === 'guide')
                         //-     span.overview-box__label Tour guide
-                        span.overview-box__text= product.vendor.name
+                        span.overview-box__text #{product.vendor.name}
 
         .description-box
-            h2.heading-secondary.ma-bt-lg= `About ${product.vendor.name}`
+            h2.heading-secondary.ma-bt-lg= `About ${product.name}`
             - const parapraphs = product.description.split('\n');
             each p in parapraphs
                 p.description__text= p
