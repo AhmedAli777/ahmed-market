@@ -106,10 +106,7 @@ productSchema.virtual('reviews', {
 //QUERY MIDDLEWARE
 
 productSchema.pre(/^find/, function (next) {
-  this.populate({
-    path: 'vendor',
-    select: 'name -__v',
-  });
+  this.populate('vendor');
   next();
 });
 
