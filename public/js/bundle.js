@@ -64453,7 +64453,8 @@ var addNewProduct = /*#__PURE__*/function () {
                 category: category,
                 subCategory: subCategory,
                 summary: summary,
-                description: description
+                description: description,
+                vendor: req.user.id
               }
             });
 

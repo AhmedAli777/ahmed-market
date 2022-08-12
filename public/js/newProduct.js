@@ -24,6 +24,7 @@ export const addNewProduct = async (
         subCategory,
         summary,
         description,
+        vendor: req.user.id,
       },
     });
 
