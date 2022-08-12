@@ -17,8 +17,8 @@ const globalErrorHandler = require(`${__dirname}/controllers/errorController`);
 const productRouter = require(`${__dirname}/routes/productRoutes`);
 const userRouter = require(`${__dirname}/routes/userRoutes`);
 const reviewRouter = require(`${__dirname}/routes/reviewRoutes`);
-const bookingRouter = require(`${__dirname}/routes/bookingRoutes`);
-const bookingController = require('./controllers/bookingController');
+const paymentRouter = require(`${__dirname}/routes/paymentRoutes`);
+const paymentController = require('./controllers/paymentController');
 
 const viewRouter = require(`${__dirname}/routes/viewRoutes`);
 
@@ -63,7 +63,7 @@ app.use('/api', limiter);
 app.post(
   '/webhook-checkout',
   express.raw({ type: 'application/json' }),
-  bookingController.webhookCheckout
+  paymentController.webhookCheckout
 );
 //Body barser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
@@ -108,7 +108,7 @@ app.use('/', viewRouter);
 app.use('/api/v1/products', productRouter);
 app.use('/api/v1/users', userRouter);
 app.use('/api/v1/reviews', reviewRouter);
-app.use('/api/v1/bookings', bookingRouter);
+app.use('/api/v1/payments', paymentRouter);
 
 app.all('*', (req, res, next) => {
   next(new AppError(`Cant find ${req.originalUrl} on this server !`, 404));

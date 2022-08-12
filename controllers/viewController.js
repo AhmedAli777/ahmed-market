@@ -2,7 +2,7 @@
 /* eslint-disable no-unused-vars */
 const Product = require(`${__dirname}/../models/productModel`);
 const User = require(`${__dirname}/../models/userModel`);
-const Booking = require(`${__dirname}/../models/bookingModel`);
+const Payment = require(`${__dirname}/../models/paymentModel`);
 
 const catchAsync = require(`${__dirname}/../utils/catchAsync`);
 // const factory = require(`${__dirname}/handlerFactory`);
@@ -10,9 +10,9 @@ const AppError = require(`${__dirname}/../utils/appError`);
 
 exports.alerts = (req, res, next) => {
   const { alert } = req.query;
-  if (alert === 'booking')
+  if (alert === 'payment')
     res.locals.alert =
-      "Your booking was successful! Please check your email for a confirmation. If your booking doesn't show up here immediatly, please come back later.";
+      "Your payment was successful! Please check your email for a confirmation. If your payment doesn't show up here immediatly, please come back later.";
   next();
 };
 
@@ -50,10 +50,10 @@ exports.getProduct = catchAsync(async (req, res, next) => {
 });
 
 exports.getMyProducts = catchAsync(async (req, res, next) => {
-  // 1) Find all bookings
-  const bookings = await Booking.find({ user: req.user.id });
+  // 1) Find all payments
+  const payments = await Payment.find({ user: req.user.id });
   // 2) Find products with the returned IDs
-  const productIDs = bookings.map((el) => el.product);
+  const productIDs = payments.map((el) => el.product);
   const products = await Product.find({ _id: { $in: productIDs } });
 
   res.status(200).render('overview', {
@@ -66,10 +66,10 @@ exports.getMyProducts = catchAsync(async (req, res, next) => {
 /////////VENDOR VIEWS//////////////////
 
 exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
-  // 1) Find all bookings
-  const bookings = await Booking.find({ vendor: req.user.id });
+  // 1) Find all payments
+  const payments = await Payment.find({ vendor: req.user.id });
   // 2) Find products with the returned IDs
-  const productIDs = bookings.map((el) => el.product);
+  const productIDs = payments.map((el) => el.product);
   const products = await Product.find({ _id: { $in: productIDs } });
 
   res.status(200).render('overview', {
@@ -79,7 +79,7 @@ exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
 });
 
 exports.getMyApprovedProducts = catchAsync(async (req, res, next) => {
-  // 1) Find all bookings
+  // 1) Find all payments
 
   const products = await Product.find({
     vendor: req.user.id,
@@ -93,7 +93,7 @@ exports.getMyApprovedProducts = catchAsync(async (req, res, next) => {
 });
 
 exports.getMyRejectedProducts = catchAsync(async (req, res, next) => {
-  // 1) Find all bookings
+  // 1) Find all payments
 
   const products = await Product.find({
     vendor: req.user.id,
