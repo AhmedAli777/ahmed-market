@@ -71,7 +71,7 @@ exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
   const productIDs = myProducts.map((el) => el.id);
   const myBooking = await Booking.find({ id: { $in: productIDs } });
   const paidProductIDs = myBooking.map((el) => el.product);
-  const products = await Booking.find({ _id: { $in: paidProductIDs } });
+  const products = await Product.find({ _id: { $in: paidProductIDs } });
 
   res.status(200).render('overview', {
     title: 'My Paid Products',
