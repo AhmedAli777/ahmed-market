@@ -39,9 +39,9 @@ block content
             div
                 .overview-box__group
                     h2.heading-secondary.ma-bt-lg Quick facts
-                    +overviewBox('Category', product.category, 'calendar')
+                    +overviewBox('Category', product.category, 'trending-up')
                     +overviewBox('Sub Category', product.subCategory, 'trending-up')
-                    +overviewBox('Rating', `${product.ratingAverage} / 5`, 'star')
+                    +overviewBox('Rating', `${product.ratingAverage} / 5`, 'trending-up')
 
 
                 .overview-box__group
@@ -80,7 +80,7 @@ block content
                 
                 if (user.role === 'admin' && product.status==='waiting')
                     button.btn.btn--green.span-all-rows#approve-product(data-product-id=`${product.id}`) approve !
-                if user
+                else if user
                     button.btn.btn--green.span-all-rows#buy-product(data-product-id=`${product.id}`) Buy now !
                 else
                     a.btn.btn--green.span-all-rows(href='/login') Log in to book product
