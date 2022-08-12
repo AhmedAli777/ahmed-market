@@ -68,8 +68,17 @@ if (newProduct)
     const subCategory = document.getElementById('subCategory').value;
     const summary = document.getElementById('summary').value;
     const description = document.getElementById('description').value;
+    const { vendorId } = e.target.dataset;
 
-    addNewProduct(name, price, category, subCategory, summary, description);
+    addNewProduct(
+      name,
+      price,
+      category,
+      subCategory,
+      summary,
+      description,
+      vendorId
+    );
   });
 
 if (userPasswordForm)
