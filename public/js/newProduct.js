@@ -3,21 +3,18 @@ import axios from 'axios';
 import { showAlert } from './alerts';
 
 // type is either 'password' or 'data'
-export const updateSettings = async (data, type) => {
+export const addNewProduct = async (data) => {
   try {
-    const url =
-      type === 'password'
-        ? '/api/v1/users/updateMyPassword'
-        : '/api/v1/users/updateMe';
+    const url = '/api/v1/products/';
 
     const res = await axios({
-      method: 'PATCH',
+      method: 'POST',
       url,
-      data
+      data,
     });
 
     if (res.data.status === 'success') {
-      showAlert('success', `${type.toUpperCase()} updated successfully!`);
+      showAlert('success', `${type.toUpperCase()} Added successfully!`);
     }
   } catch (err) {
     showAlert('error', err.response.data.message);

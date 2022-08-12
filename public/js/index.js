@@ -6,11 +6,13 @@ import { login, logout, signup } from './login';
 import { updateSettings } from './updateSettings';
 import { bookProduct } from './stripe';
 import { showAlert } from './alerts';
+import { addNewProduct } from './newProduct';
 
 // DOM ELEMENTS
 const leaflet = document.getElementById('map');
 const loginForm = document.querySelector('.form--login');
 const signupForm = document.querySelector('.form--signup');
+const newProduct = document.querySelector('.form--newProduct');
 const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
@@ -55,6 +57,25 @@ if (userDataForm)
     // console.log(form);
 
     updateSettings(form, 'data');
+  });
+
+if (newProduct)
+  newProduct.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const form = new FormData();
+    form.append('name', document.getElementById('name').value);
+    form.append('price', document.getElementById('price').value);
+    form.append('category', document.getElementById('category').value);
+    form.append('subCategory', document.getElementById('subCategory').value);
+    form.append('summary', document.getElementById('summary').value);
+    form.append('description', document.getElementById('description').value);
+
+    form.append('coverImage', document.getElementById('coverImage').files[0]);
+    form.append('image1', document.getElementById('image1').files[0]);
+    form.append('image2', document.getElementById('image2').files[0]);
+    form.append('image3', document.getElementById('image3').files[0]);
+
+    addNewProduct(form);
   });
 
 if (userPasswordForm)
