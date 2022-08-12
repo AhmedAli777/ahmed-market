@@ -37,7 +37,7 @@ exports.getCheckoutSession = catchAsync(async (req, res, next) => {
             ],
           },
           unit_amount: product.price * 100,
-          currency: 'usd',
+          currency: 'egp',
         },
         quantity: 1,
       },
