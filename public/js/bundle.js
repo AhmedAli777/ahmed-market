@@ -64823,7 +64823,6 @@ if (newProduct) newProduct.addEventListener('submit', function (e) {
   var subCategory = document.getElementById('subCategory').value;
   var summary = document.getElementById('summary').value;
   var description = document.getElementById('description').value;
-  (0, _login.signup)(name, email, password, passwordConfirm);
   (0, _newProduct.addNewProduct)(name, price, category, subCategory, summary, description);
 });
 if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/function () {

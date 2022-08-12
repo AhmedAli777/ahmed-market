@@ -69,8 +69,6 @@ if (newProduct)
     const summary = document.getElementById('summary').value;
     const description = document.getElementById('description').value;
 
-    signup(name, email, password, passwordConfirm);
-
     addNewProduct(name, price, category, subCategory, summary, description);
   });
 
