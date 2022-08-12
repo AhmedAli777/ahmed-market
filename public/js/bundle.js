@@ -64435,7 +64435,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 // type is either 'password' or 'data'
 var addNewProduct = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(name, price, category, subCategory, summary, description) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(name, price, category, subCategory, summary, description, vendorId) {
     var url, res;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
@@ -64454,7 +64454,7 @@ var addNewProduct = /*#__PURE__*/function () {
                 subCategory: subCategory,
                 summary: summary,
                 description: description,
-                vendor: req.user.id
+                vendor: vendorId
               }
             });
 
@@ -64481,7 +64481,7 @@ var addNewProduct = /*#__PURE__*/function () {
     }, _callee, null, [[0, 8]]);
   }));
 
-  return function addNewProduct(_x, _x2, _x3, _x4, _x5, _x6) {
+  return function addNewProduct(_x, _x2, _x3, _x4, _x5, _x6, _x7) {
     return _ref.apply(this, arguments);
   };
 }();
@@ -64824,7 +64824,8 @@ if (newProduct) newProduct.addEventListener('submit', function (e) {
   var subCategory = document.getElementById('subCategory').value;
   var summary = document.getElementById('summary').value;
   var description = document.getElementById('description').value;
-  (0, _newProduct.addNewProduct)(name, price, category, subCategory, summary, description);
+  var vendorId = e.target.dataset.vendorId;
+  (0, _newProduct.addNewProduct)(name, price, category, subCategory, summary, description, vendorId);
 });
 if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {

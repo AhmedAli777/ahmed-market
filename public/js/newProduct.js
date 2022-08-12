@@ -9,7 +9,8 @@ export const addNewProduct = async (
   category,
   subCategory,
   summary,
-  description
+  description,
+  vendorId
 ) => {
   try {
     const url = '/api/v1/products/';
@@ -24,7 +25,7 @@ export const addNewProduct = async (
         subCategory,
         summary,
         description,
-        vendor: req.user.id,
+        vendor: vendorId,
       },
     });
 
