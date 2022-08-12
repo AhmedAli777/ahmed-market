@@ -11,6 +11,7 @@ const {
   updateUserData,
   getSignupForm,
   getMyProducts,
+  getMyPaidProducts,
   getnewproductForm,
   alerts,
 } = require(`${__dirname}/../controllers/viewController`);
@@ -25,6 +26,8 @@ router.get('/signup', getSignupForm);
 router.get('/me', protect, getAccount);
 router.get('/', isLoggedIn, getOverview);
 router.get('/my-products', protect, getMyProducts);
+router.get('/my-paid-products', protect, getMyPaidProducts);
+
 router.get('/product/:id', isLoggedIn, getProduct);
 router.get('/login', isLoggedIn, getLoginForm);
 router.post('/submit-user-data', protect, updateUserData);

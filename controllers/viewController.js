@@ -63,6 +63,20 @@ exports.getMyProducts = catchAsync(async (req, res, next) => {
   });
 });
 
+exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
+  // 1) Find all bookings
+  const myProducts = await Product.find({ vendor: req.user.id });
+
+  // 2) Find products with the returned IDs
+  const productIDs = myProducts.map((el) => el.product);
+  const products = await Booking.find({ _id: { $in: productIDs } });
+
+  res.status(200).render('overview', {
+    title: 'My Paid Products',
+    products,
+  });
+});
+
 exports.getLoginForm = (req, res) => {
   res.status(200).render('login', {
     title: 'Log into your account ',
