@@ -62,20 +62,16 @@ if (userDataForm)
 if (newProduct)
   newProduct.addEventListener('submit', (e) => {
     e.preventDefault();
-    const form = new FormData();
-    form.append('name', document.getElementById('name').value);
-    form.append('price', document.getElementById('price').value);
-    form.append('category', document.getElementById('category').value);
-    form.append('subCategory', document.getElementById('subCategory').value);
-    form.append('summary', document.getElementById('summary').value);
-    form.append('description', document.getElementById('description').value);
+    const name = document.getElementById('name').value;
+    const price = document.getElementById('price').value;
+    const category = document.getElementById('category').value;
+    const subCategory = document.getElementById('subCategory').value;
+    const summary = document.getElementById('summary').value;
+    const description = document.getElementById('description').value;
 
-    form.append('coverImage', document.getElementById('coverImage').files[0]);
-    form.append('image1', document.getElementById('image1').files[0]);
-    form.append('image2', document.getElementById('image2').files[0]);
-    form.append('image3', document.getElementById('image3').files[0]);
+    signup(name, email, password, passwordConfirm);
 
-    addNewProduct(form);
+    addNewProduct(name, price, category, subCategory, summary, description);
   });
 
 if (userPasswordForm)

@@ -64435,7 +64435,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 
 // type is either 'password' or 'data'
 var addNewProduct = /*#__PURE__*/function () {
-  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(data) {
+  var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(name, price, category, subCategory, summary, description) {
     var url, res;
     return _regeneratorRuntime().wrap(function _callee$(_context) {
       while (1) {
@@ -64447,7 +64447,14 @@ var addNewProduct = /*#__PURE__*/function () {
             return (0, _axios.default)({
               method: 'POST',
               url: url,
-              data: data
+              data: {
+                name: name,
+                price: price,
+                category: category,
+                subCategory: subCategory,
+                summary: summary,
+                description: description
+              }
             });
 
           case 4:
@@ -64473,7 +64480,7 @@ var addNewProduct = /*#__PURE__*/function () {
     }, _callee, null, [[0, 8]]);
   }));
 
-  return function addNewProduct(_x) {
+  return function addNewProduct(_x, _x2, _x3, _x4, _x5, _x6) {
     return _ref.apply(this, arguments);
   };
 }();
@@ -64810,18 +64817,14 @@ if (userDataForm) userDataForm.addEventListener('submit', function (e) {
 });
 if (newProduct) newProduct.addEventListener('submit', function (e) {
   e.preventDefault();
-  var form = new FormData();
-  form.append('name', document.getElementById('name').value);
-  form.append('price', document.getElementById('price').value);
-  form.append('category', document.getElementById('category').value);
-  form.append('subCategory', document.getElementById('subCategory').value);
-  form.append('summary', document.getElementById('summary').value);
-  form.append('description', document.getElementById('description').value);
-  form.append('coverImage', document.getElementById('coverImage').files[0]);
-  form.append('image1', document.getElementById('image1').files[0]);
-  form.append('image2', document.getElementById('image2').files[0]);
-  form.append('image3', document.getElementById('image3').files[0]);
-  (0, _newProduct.addNewProduct)(form);
+  var name = document.getElementById('name').value;
+  var price = document.getElementById('price').value;
+  var category = document.getElementById('category').value;
+  var subCategory = document.getElementById('subCategory').value;
+  var summary = document.getElementById('summary').value;
+  var description = document.getElementById('description').value;
+  (0, _login.signup)(name, email, password, passwordConfirm);
+  (0, _newProduct.addNewProduct)(name, price, category, subCategory, summary, description);
 });
 if (userPasswordForm) userPasswordForm.addEventListener('submit', /*#__PURE__*/function () {
   var _ref = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee(e) {

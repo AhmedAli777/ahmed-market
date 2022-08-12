@@ -52,11 +52,13 @@ const productSchema = new mongoose.Schema(
 
     imageCover: {
       type: String,
-      // required: [true, 'A product must have a cover image '],
+      required: [true, 'A product must have a cover image '],
+      default: 'default-cover.jpg',
     },
 
     images: {
       type: [String],
+      default: ['default-1.jpg', 'default-2.jpg', 'default-3.jpg'],
       select: true,
     },
     createdAt: {
