@@ -22,9 +22,9 @@ block content
             h5.admin-nav__heading Admin
             ul.side-nav
               +navItem('/addproduct', 'add product', 'map')
-              +navItem('#', 'paid products', 'map')
-              +navItem('#', 'approved products', 'map')
-              +navItem('#', 'rejected products', 'map')
+              +navItem('/my-paid-products', 'paid products', 'map')
+              +navItem('/my-appreoved-products', 'approved products', 'map')
+              +navItem('/my-rejected-products', 'rejected products', 'map')
 
       .user-view__content
         .user-view__form-container

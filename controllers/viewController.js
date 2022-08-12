@@ -62,6 +62,9 @@ exports.getMyProducts = catchAsync(async (req, res, next) => {
   });
 });
 
+///////////////////////////////////////
+/////////VENDOR VIEWS//////////////////
+
 exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
   // 1) Find all bookings
   const bookings = await Booking.find({ vendor: req.user.id });
@@ -74,6 +77,35 @@ exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
     products,
   });
 });
+
+exports.getMyApprovedProducts = catchAsync(async (req, res, next) => {
+  // 1) Find all bookings
+
+  const products = await Product.find(
+    { vendor: req.user.id },
+    { status: 'approved' }
+  );
+
+  res.status(200).render('overview', {
+    title: 'My Products',
+    products,
+  });
+});
+
+exports.getMyRejectedProducts = catchAsync(async (req, res, next) => {
+  // 1) Find all bookings
+
+  const products = await Product.find(
+    { vendor: req.user.id },
+    { status: 'rejected' }
+  );
+
+  res.status(200).render('overview', {
+    title: 'My Products',
+    products,
+  });
+});
+//////////////////////////////////////////////////
 
 exports.getLoginForm = (req, res) => {
   res.status(200).render('login', {
