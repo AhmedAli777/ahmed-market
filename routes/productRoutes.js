@@ -37,16 +37,13 @@ router.use('/:productId/reviews', reviewRouter);
 router.route('/top-5-products').get(alisTopFive, getAllProducts);
 router.route('/products-stats').get(getProductsStats);
 
-router
-  .route('/')
-  .get(getAllProducts)
-  .post(protect, restrictTo('admin'), createProduct);
+router.route('/').get(getAllProducts).post(createProduct);
 router
   .route('/:id')
   .get(getProduct)
   .patch(
-    // protect,
-    // restrictTo('admin'),
+    protect,
+    restrictTo('admin'),
     uploadProductImages,
     resizeProductImages,
     updateProduct
