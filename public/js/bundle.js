@@ -64859,7 +64859,8 @@ var userDataForm = document.querySelector('.form-user-data');
 var userPasswordForm = document.querySelector('.form-user-password');
 var buyBtn = document.getElementById('buy-product');
 var appBtn = document.getElementById('approve-product');
-var rejBtn = document.getElementById('reject-product'); // DELEGATION
+var rejBtn = document.getElementById('reject-product');
+var appagain = document.getElementById('approve-again'); // DELEGATION
 
 if (leaflet) {
   // const locations = JSON.parse(mapBox.dataset.locations);
@@ -64945,6 +64946,10 @@ if (buyBtn) bookBtn.addEventListener('click', function (e) {
   (0, _stripe.bookProduct)(productId);
 });
 if (appBtn) appBtn.addEventListener('click', function (e) {
+  var productId = e.target.dataset.productId;
+  (0, _approveReject.approveRejectProduct)(productId, 'approved');
+});
+if (appagain) appagain.addEventListener('click', function (e) {
   var productId = e.target.dataset.productId;
   (0, _approveReject.approveRejectProduct)(productId, 'approved');
 });

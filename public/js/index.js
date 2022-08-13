@@ -20,6 +20,7 @@ const userPasswordForm = document.querySelector('.form-user-password');
 const buyBtn = document.getElementById('buy-product');
 const appBtn = document.getElementById('approve-product');
 const rejBtn = document.getElementById('reject-product');
+const appagain = document.getElementById('approve-again');
 
 // DELEGATION
 if (leaflet) {
@@ -112,6 +113,12 @@ if (buyBtn)
 
 if (appBtn)
   appBtn.addEventListener('click', (e) => {
+    const { productId } = e.target.dataset;
+    approveRejectProduct(productId, 'approved');
+  });
+
+if (appagain)
+  appagain.addEventListener('click', (e) => {
     const { productId } = e.target.dataset;
     approveRejectProduct(productId, 'approved');
   });
