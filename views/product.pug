@@ -39,13 +39,13 @@ block content
             div
                 .overview-box__group
                     h2.heading-secondary.ma-bt-lg Quick facts
-                    +overviewBox('Category', product.category, 'trending-up')
-                    +overviewBox('Sub Category', product.subCategory, 'trending-up')
+                    +overviewBox('Category', product.category, 'box')
+                    +overviewBox('Sub Category', product.subCategory, 'box')
                     +overviewBox('Rating', `${product.ratingAverage} / 5`, 'trending-up')
 
 
                 .overview-box__group
-                    h2.heading-secondary.ma-bt-lg Your Vendor
+                    h2.heading-secondary.ma-bt-lg Vendor
                     .overview-box__detail
                         img.overview-box__img(src=`/img/users/${product.vendor.photo}`, alt=`${product.vendor.name}`)
                         span.overview-box__text= product.vendor.name
