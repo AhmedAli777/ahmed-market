@@ -54,7 +54,7 @@ export const logout = async () => {
       url: '/api/v1/users/logout',
     });
     if ((res.data.status = 'success')) {
-      location.assign('/');
+      location.assign('https://ahmed-market.herokuapp.com/');
     }
   } catch (err) {
     // console.log(err.response);
