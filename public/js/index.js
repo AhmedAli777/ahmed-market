@@ -7,6 +7,7 @@ import { updateSettings } from './updateSettings';
 import { bookProduct } from './stripe';
 import { showAlert } from './alerts';
 import { addNewProduct } from './newProduct';
+import { approveRejectProduct } from './approve-reject';
 
 // DOM ELEMENTS
 const leaflet = document.getElementById('map');
@@ -17,6 +18,8 @@ const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const buyBtn = document.getElementById('buy-product');
+const appBtn = document.getElementById('approve-product');
+const rejBtn = document.getElementById('reject-product');
 
 // DELEGATION
 if (leaflet) {
@@ -105,6 +108,18 @@ if (buyBtn)
     e.target.textContent = 'Processing...';
     const { productId } = e.target.dataset;
     bookProduct(productId);
+  });
+
+if (appBtn)
+  appBtn.addEventListener('click', (e) => {
+    const { productId } = e.target.dataset;
+    approveProduct(productId, 'approved');
+  });
+
+if (rejBtn)
+  rejBtn.addEventListener('click', (e) => {
+    const { productId } = e.target.dataset;
+    rejectProduct(productId, 'rejected');
   });
 
 const alertMessage = document.querySelector('body').dataset.alert;
