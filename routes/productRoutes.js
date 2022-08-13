@@ -45,13 +45,14 @@ router
 router
   .route('/:id')
   .get(getProduct)
-  .patch(
-    protect,
-    restrictTo('admin'),
-    uploadProductImages,
-    resizeProductImages,
-    updateProduct
-  )
+  // .patch(
+  //   protect,
+  //   restrictTo('admin'),
+  //   uploadProductImages,
+  //   resizeProductImages,
+  //   updateProduct
+  // )
+  .patch(protect, restrictTo('admin'), updateProduct)
   .delete(protect, restrictTo('admin'), deleteProduct);
 
 module.exports = router;
