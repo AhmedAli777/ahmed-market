@@ -113,13 +113,13 @@ if (buyBtn)
 if (appBtn)
   appBtn.addEventListener('click', (e) => {
     const { productId } = e.target.dataset;
-    approveProduct(productId, 'approved');
+    approveRejectProduct(productId, 'approved');
   });
 
 if (rejBtn)
   rejBtn.addEventListener('click', (e) => {
     const { productId } = e.target.dataset;
-    rejectProduct(productId, 'rejected');
+    approveRejectProduct(productId, 'rejected');
   });
 
 const alertMessage = document.querySelector('body').dataset.alert;

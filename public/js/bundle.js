@@ -64946,11 +64946,11 @@ if (buyBtn) bookBtn.addEventListener('click', function (e) {
 });
 if (appBtn) appBtn.addEventListener('click', function (e) {
   var productId = e.target.dataset.productId;
-  approveProduct(productId, 'approved');
+  (0, _approveReject.approveRejectProduct)(productId, 'approved');
 });
 if (rejBtn) rejBtn.addEventListener('click', function (e) {
   var productId = e.target.dataset.productId;
-  rejectProduct(productId, 'rejected');
+  (0, _approveReject.approveRejectProduct)(productId, 'rejected');
 });
 var alertMessage = document.querySelector('body').dataset.alert;
 if (alertMessage) (0, _alerts.showAlert)('success', alertMessage, 20);
