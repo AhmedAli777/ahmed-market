@@ -27,10 +27,13 @@ const upload = multer({
   fileFilter: multerFilter,
 });
 
-exports.uploadProductImages = upload.fields([
-  { name: 'imageCover', maxCount: 1 },
-  { name: 'images', maxCount: 3 },
-]);
+exports.uploadProductImages = () => {
+  if (req.files)
+    upload.fields([
+      { name: 'imageCover', maxCount: 1 },
+      { name: 'images', maxCount: 3 },
+    ]);
+};
 
 // upload.single('image') req.file
 // upload.array('images', 5) req.files
