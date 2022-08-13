@@ -26,6 +26,14 @@ block content
               +navItem('/my-appreoved-products', 'approved products', 'thumbs-up')
               +navItem('/my-rejected-products', 'rejected products', 'delete')
 
+        - if (user.role === 'admin')
+          .admin-nav
+            h5.admin-nav__heading Admin Sittings
+            ul.side-nav
+              +navItem('/waiting-products', 'Waiting product', 'plus')
+              +navItem('/rejected-products', 'Rejected products', 'credit-card')
+
+
       .user-view__content
         .user-view__form-container
           h2.heading-secondary.ma-bt-md Your account settings

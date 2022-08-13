@@ -63,6 +63,26 @@ exports.getMyProducts = catchAsync(async (req, res, next) => {
 });
 
 ///////////////////////////////////////
+/////////ADMIN VIEWS//////////////////
+exports.getWatingProducts = catchAsync(async (req, res, next) => {
+  const products = await Product.find({ status: 'waiting' });
+
+  res.status(200).render('overview', {
+    title: 'My Products',
+    products,
+  });
+});
+
+exports.getRejectedProducts = catchAsync(async (req, res, next) => {
+  const products = await Product.find({ status: 'rejected' });
+
+  res.status(200).render('overview', {
+    title: 'My Products',
+    products,
+  });
+});
+
+///////////////////////////////////////
 /////////VENDOR VIEWS//////////////////
 
 exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
