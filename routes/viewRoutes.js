@@ -37,7 +37,7 @@ router.get('/my-rejected-products', protect, getMyRejectedProducts);
 router.get('/waiting-products', protect, getWatingProducts);
 router.get('/rejected-products', protect, getRejectedProducts);
 
-router.get('/product/:id', isLoggedIn, getProduct);
+router.get('/products/:id', isLoggedIn, getProduct);
 router.get('/login', isLoggedIn, getLoginForm);
 router.post('/submit-user-data', protect, updateUserData);
 
