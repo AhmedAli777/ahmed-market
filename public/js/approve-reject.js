@@ -5,7 +5,7 @@ import { showAlert } from './alerts';
 // type is either 'password' or 'data'
 export const approveRejectProduct = async (productId, type) => {
   try {
-    const url = `/api/v1/product/${productId}`;
+    const url = `/api/v1/products/${productId}`;
 
     const res = await axios({
       method: 'PATCH',

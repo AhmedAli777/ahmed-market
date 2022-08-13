@@ -64518,7 +64518,7 @@ var approveRejectProduct = /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.prev = 0;
-            url = "/api/v1/product/".concat(productId);
+            url = "/api/v1/products/".concat(productId);
             _context.next = 4;
             return (0, _axios.default)({
               method: 'PATCH',
