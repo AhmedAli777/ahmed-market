@@ -15,7 +15,7 @@ const {
   getMyApprovedProducts,
   getMyRejectedProducts,
   getRejectedProducts,
-  getWatingProducts,
+  getWaitingProducts,
   getnewproductForm,
   alerts,
 } = require(`${__dirname}/../controllers/viewController`);
@@ -34,7 +34,7 @@ router.get('/my-paid-products', protect, getMyPaidProducts);
 router.get('/my-appreoved-products', protect, getMyApprovedProducts);
 router.get('/my-rejected-products', protect, getMyRejectedProducts);
 
-router.get('/waiting-products', protect, getWatingProducts);
+router.get('/waiting-products', protect, getWaitingProducts);
 router.get('/rejected-products', protect, getRejectedProducts);
 
 router.get('/products/:id', isLoggedIn, getProduct);

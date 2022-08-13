@@ -44,7 +44,7 @@ exports.getProduct = catchAsync(async (req, res, next) => {
     return next(new AppError('There is no product with that name.', 404));
   }
   res.status(200).render('product', {
-    title: `${product.name} Product`,
+    title: `${product.name}`,
     product,
   });
 });
@@ -64,11 +64,11 @@ exports.getMyProducts = catchAsync(async (req, res, next) => {
 
 ///////////////////////////////////////
 /////////ADMIN VIEWS//////////////////
-exports.getWatingProducts = catchAsync(async (req, res, next) => {
+exports.getWaitingProducts = catchAsync(async (req, res, next) => {
   const products = await Product.find({ status: 'waiting' });
 
   res.status(200).render('overview', {
-    title: 'My Products',
+    title: 'Waiting Products',
     products,
   });
 });
@@ -77,7 +77,7 @@ exports.getRejectedProducts = catchAsync(async (req, res, next) => {
   const products = await Product.find({ status: 'rejected' });
 
   res.status(200).render('overview', {
-    title: 'My Products',
+    title: 'Rejected Products',
     products,
   });
 });
@@ -93,7 +93,7 @@ exports.getMyPaidProducts = catchAsync(async (req, res, next) => {
   const products = await Product.find({ _id: { $in: productIDs } });
 
   res.status(200).render('overview', {
-    title: 'My Products',
+    title: 'Paid Products',
     products,
   });
 });
@@ -107,7 +107,7 @@ exports.getMyApprovedProducts = catchAsync(async (req, res, next) => {
   });
 
   res.status(200).render('overview', {
-    title: 'My Products',
+    title: 'Approved Products',
     products,
   });
 });
@@ -121,7 +121,7 @@ exports.getMyRejectedProducts = catchAsync(async (req, res, next) => {
   });
 
   res.status(200).render('overview', {
-    title: 'My Products',
+    title: 'Rejected Products',
     products,
   });
 });
