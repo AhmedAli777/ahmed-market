@@ -81,7 +81,7 @@ block content
                 if (user.role === 'admin' && product.status==='waiting')
                     button.btn.btn--green.span-all-rows#approve-product(data-product-id=`${product.id}`) approve !
                     button.btn.btn--green.span-all-rows#reject-product(data-product-id=`${product.id}`) reject !
-                if (user.role === 'admin' && product.status==='rejected')
+                else if (user.role === 'admin' && product.status==='rejected')
                     button.btn.btn--green.span-all-rows#approve-product(data-product-id=`${product.id}`) approve !
                 else if user
                     button.btn.btn--green.span-all-rows#buy-product(data-product-id=`${product.id}`) Buy now !
