@@ -33,6 +33,7 @@ exports.uploadProductImages = upload.fields([
 ]);
 
 exports.resizeProductImages = catchAsync(async (req, res, next) => {
+  if (!req.files) return next();
   if (!req.files.imageCover || !req.files.images) return next();
 
   // 1) Cover image
