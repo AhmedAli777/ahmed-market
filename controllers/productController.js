@@ -28,7 +28,7 @@ const upload = multer({
 });
 
 exports.uploadProductImages = catchAsync(async (req, res, next) => {
-  if (!req.files.imageCover || !req.files.images) return next();
+  if (!req.files) return next();
   upload.fields([
     { name: 'imageCover', maxCount: 1 },
     { name: 'images', maxCount: 3 },
