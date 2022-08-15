@@ -2,35 +2,35 @@
   {
     "_id": "5c8a34ed14eb5c17645c9108",
     "review": "Cras mollis nisi parturient mi nec aliquet suspendisse sagittis eros condimentum scelerisque taciti mattis praesent feugiat eu nascetur a tincidunt",
-    "rating": 5,
+    "rating": 2,
     "user": "5c8a1f292f8fb814b56fa184",
     "product": "5c88fa8cf4afda39709c2955"
   },
   {
     "_id": "5c8a355b14eb5c17645c9109",
     "review": "Tempus curabitur faucibus auctor bibendum duis gravida tincidunt litora himenaeos facilisis vivamus vehicula potenti semper fusce suspendisse sagittis!",
-    "rating": 4,
+    "rating": 2,
     "user": "5c8a1f292f8fb814b56fa184",
     "product": "5c88fa8cf4afda39709c2951"
   },
   {
     "_id": "5c8a359914eb5c17645c910a",
     "review": "Convallis turpis porttitor sapien ad urna efficitur dui vivamus in praesent nulla hac non potenti!",
-    "rating": 5,
+    "rating": 1,
     "user": "5c8a1f292f8fb814b56fa184",
     "product": "5c88fa8cf4afda39709c295a"
   },
   {
     "_id": "5c8a35b614eb5c17645c910b",
     "review": "Habitasse scelerisque class quam primis convallis integer eros congue nulla proin nam faucibus parturient.",
-    "rating": 4,
+    "rating": 3,
     "user": "5c8a1f292f8fb814b56fa184",
     "product": "5c88fa8cf4afda39709c295d"
   },
   {
     "_id": "5c8a364c14eb5c17645c910c",
     "review": "Cras consequat fames faucibus ac aliquam dolor a euismod porttitor rhoncus venenatis himenaeos montes tristique pretium libero nisi!",
-    "rating": 5,
+    "rating": 4,
     "user": "5c8a1f292f8fb814b56fa184",
     "product": "5c88fa8cf4afda39709c2958"
   },
@@ -44,35 +44,35 @@
   {
     "_id": "5c8a36a014eb5c17645c910e",
     "review": "Senectus lectus eleifend ex lobortis cras nam cursus accumsan tellus lacus faucibus himenaeos posuere!",
-    "rating": 5,
+    "rating": 3,
     "user": "5c8a1f4e2f8fb814b56fa185",
     "product": "5c88fa8cf4afda39709c2957"
   },
   {
     "_id": "5c8a36b714eb5c17645c910f",
     "review": "Pulvinar taciti etiam aenean lacinia natoque interdum fringilla suspendisse nam sapien urna!",
-    "rating": 4,
+    "rating": 2,
     "user": "5c8a1f4e2f8fb814b56fa185",
     "product": "5c88fa8cf4afda39709c2955"
   },
   {
     "_id": "5c8a379a14eb5c17645c9110",
     "review": "Pretium vel inceptos fringilla sit dui fusce varius gravida platea morbi semper erat elit porttitor potenti!",
-    "rating": 5,
+    "rating": 4,
     "user": "5c8a1f4e2f8fb814b56fa185",
     "product": "5c88fa8cf4afda39709c2951"
   },
   {
     "_id": "5c8a37b114eb5c17645c9111",
     "review": "Ex a bibendum quis volutpat consequat euismod vulputate parturient laoreet diam sagittis amet at blandit.",
-    "rating": 4,
+    "rating": 3,
     "user": "5c8a1f4e2f8fb814b56fa185",
     "product": "5c88fa8cf4afda39709c295a"
   },
   {
     "_id": "5c8a37cb14eb5c17645c9112",
     "review": "Auctor euismod interdum augue tristique senectus nascetur cras justo eleifend mattis libero id adipiscing amet placerat",
-    "rating": 5,
+    "rating": 2,
     "user": "5c8a1f4e2f8fb814b56fa185",
     "product": "5c88fa8cf4afda39709c295d"
   },
@@ -87,14 +87,14 @@
   {
     "_id": "5c8a381714eb5c17645c9115",
     "review": "Porttitor ullamcorper rutrum semper proin mus felis varius convallis conubia nisl erat lectus eget.",
-    "rating": 5,
+    "rating": 4,
     "user": "5c8a1f4e2f8fb814b56fa186",
     "product": "5c88fa8cf4afda39709c2955"
   },
   {
     "_id": "5c8a382d14eb5c17645c9116",
     "review": "Semper blandit felis nostra facilisi sodales pulvinar habitasse diam sapien lobortis urna nunc ipsum orci.",
-    "rating": 5,
+    "rating": 2,
     "user": "5c8a1f4e2f8fb814b56fa186",
     "product": "5c88fa8cf4afda39709c2951"
   },
@@ -115,35 +115,35 @@
   {
     "_id": "5c8a387214eb5c17645c9119",
     "review": "Semper tempus curae at platea lobortis ullamcorper curabitur luctus maecenas nisl laoreet!",
-    "rating": 5,
+    "rating": 2,
     "user": "5c8a1f4e2f8fb814b56fa186",
     "product": "5c88fa8cf4afda39709c2958"
   },
   {
     "_id": "5c8a38ac14eb5c17645c911a",
     "review": "Arcu adipiscing lobortis sem finibus consequat ac justo nisi pharetra ultricies facilisi!",
-    "rating": 5,
+    "rating": 4,
     "user": "5c8a1f4e2f8fb814b56fa186",
     "product": "5c88fa8cf4afda39709c2952"
   },
   {
     "_id": "5c8a38c714eb5c17645c911b",
     "review": "Rutrum viverra turpis nunc ultricies dolor ornare metus habitant ex quis sociosqu nascetur pellentesque quam!",
-    "rating": 5,
+    "rating": 3,
     "user": "5c8a1f4e2f8fb814b56fa187",
     "product": "5c88fa8cf4afda39709c2955"
   },
   {
     "_id": "5c8a38da14eb5c17645c911c",
     "review": "Elementum massa porttitor enim vitae eu ligula vivamus amet imperdiet urna tristique donec mattis mus erat.",
-    "rating": 5,
+    "rating": 2,
     "user": "5c8a1f4e2f8fb814b56fa187",
     "product": "5c88fa8cf4afda39709c2951"
   },
   {
     "_id": "5c8a38ed14eb5c17645c911d",
     "review": "Fusce ullamcorper gravida libero nullam lacus litora class orci habitant sollicitudin...",
-    "rating": 5,
+    "rating": 1,
     "user": "5c8a1f4e2f8fb814b56fa187",
     "product": "5c88fa8cf4afda39709c295a"
   },
@@ -158,14 +158,14 @@
   {
     "_id": "5c8a395b14eb5c17645c9120",
     "review": "Sem feugiat sed lorem vel dignissim platea habitasse dolor suscipit ultricies dapibus",
-    "rating": 5,
+    "rating": 4,
     "user": "5c8a1f4e2f8fb814b56fa188",
     "product": "5c88fa8cf4afda39709c2958"
   },
   {
     "_id": "5c8a399014eb5c17645c9121",
     "review": "Tortor dolor sed vehicula neque ultrices varius orci feugiat dignissim auctor consequat.",
-    "rating": 4,
+    "rating": 3,
     "user": "5c8a1f4e2f8fb814b56fa188",
     "product": "5c88fa8cf4afda39709c2952"
   },
@@ -186,7 +186,7 @@
   {
     "_id": "5c8a3a7014eb5c17645c9124",
     "review": "Blandit varius nascetur est felis praesent lorem himenaeos pretium dapibus tellus bibendum consequat ac duis",
-    "rating": 5,
+    "rating": 2,
     "user": "5c8a1f4e2f8fb814b56fa188",
     "product": "5c88fa8cf4afda39709c2955"
   },
@@ -200,7 +200,7 @@
   {
     "_id": "5c8a3a9914eb5c17645c9126",
     "review": "Netus eleifend adipiscing ligula placerat fusce orci sollicitudin vivamus conubia.",
-    "rating": 5,
+    "rating": 3,
     "user": "5c8a1f4e2f8fb814b56fa188",
     "product": "5c88fa8cf4afda39709c295d"
   }
