@@ -57,6 +57,7 @@ const limiter = rateLimit({
   windowMs: 60 * 60 * 1000,
   message: 'Too many requests from this IP, Please try agaim in an hour !',
 });
+
 app.use('/api', limiter);
 
 //stripe
@@ -77,17 +78,6 @@ app.use(mongoSanitize());
 app.use(xss());
 
 app.use(compression());
-
-//Test middilwares
-// app.use((req, res, next) => {
-//   console.log('hello form the middleware !');
-//   next();
-// });
-
-// app.use((req, res, next) => {
-//   req.requestTime = new Date().toISOStrinproductRouterg();
-//   next();
-// });
 
 // 3) ROUTES
 app.use('/', viewRouter);
