@@ -51,19 +51,8 @@ exports.signup = catchAsync(async (req, res, next) => {
     passwordChangedAt: req.body.passwordChangedAt,
     role: req.body.role,
   });
-  // const url = `${req.protocol}://${req.get('host')}/me`;
-
-  // await new Email(newUser, url).sendWelcome();
 
   createSendToken(newUser, 201, req, res);
-  // const token = signToken(newUser._id);
-  // res.status(201).json({
-  //   status: 'success',
-  //   token,
-  //   data: {
-  //     user: newUser,
-  //   },
-  // });
 });
 
 exports.login = catchAsync(async (req, res, next) => {
