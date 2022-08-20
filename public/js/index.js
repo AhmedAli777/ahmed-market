@@ -104,14 +104,14 @@ if (userPasswordForm)
   });
 
 if (buyBtn)
-  buyBtn.addEventListener('click', (e) => {
+  buyBtn.addEventListener('mouseover', (e) => {
     e.target.textContent = 'Processing...';
     const { productId } = e.target.dataset;
     buyProduct(productId);
   });
 
 if (appBtn)
-  appBtn.addEventListener('mouseover', (e) => {
+  appBtn.addEventListener('click', (e) => {
     const { productId } = e.target.dataset;
     approveRejectProduct(productId, 'approved');
   });
