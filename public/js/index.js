@@ -104,7 +104,7 @@ if (userPasswordForm)
   });
 
 if (buyBtn)
-  buyBtn.addEventListener('mouseover', (e) => {
+  buyBtn.addEventListener('click', (e) => {
     e.target.textContent = 'Processing...';
     const { productId } = e.target.dataset;
     buyProduct(productId);
