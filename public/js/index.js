@@ -4,7 +4,7 @@ import { sign } from 'jsonwebtoken';
 import { displayMap } from './leaflet';
 import { login, logout, signup } from './login';
 import { updateSettings } from './updateSettings';
-import { bookProduct } from './stripe';
+import { buyProduct } from './stripe';
 import { showAlert } from './alerts';
 import { addNewProduct } from './newProduct';
 import { approveRejectProduct } from './approve-reject';
@@ -108,7 +108,7 @@ if (buyBtn)
   buyBtn.addEventListener('click', (e) => {
     e.target.textContent = 'Processing...';
     const { productId } = e.target.dataset;
-    bookProduct(productId);
+    buyProduct(productId);
   });
 
 if (appBtn)
