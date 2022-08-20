@@ -1,7 +1,6 @@
 /* eslint-disable */
 import '@babel/polyfill';
 import { sign } from 'jsonwebtoken';
-import { displayMap } from './leaflet';
 import { login, logout, signup } from './login';
 import { updateSettings } from './updateSettings';
 import { buyProduct } from './stripe';

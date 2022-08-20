@@ -10,7 +10,7 @@ const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
 
 exports.getCheckoutSession = catchAsync(async (req, res, next) => {
-  // 1) Get the currently booked product
+  // 1) Get the currently product
   const product = await Product.findById(req.params.productId);
   //   console.log(product);
 
