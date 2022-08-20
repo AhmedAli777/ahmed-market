@@ -111,7 +111,7 @@ if (buyBtn)
   });
 
 if (appBtn)
-  appBtn.addEventListener('click', (e) => {
+  appBtn.addEventListener('mouseover', (e) => {
     const { productId } = e.target.dataset;
     approveRejectProduct(productId, 'approved');
   });
